@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="taskApp">
+  <head>
+    <meta charset="utf-8">
+    <title>To do List</title>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+  </head>
+  <body ng-controller="taskController">
+    <h1>Things to do</h1>
+    <label>Enter a task</label>
+    <input type="text" ng-model="task_name"/>
+    <button ng-click="submitTask()">Submit Task</button>
+    <div>
+      <ul>
+        <li ng-repeat="name in task_names">{{name}}</li>
+      </ul>
+    </div>
+
+  </body>
+</html>
