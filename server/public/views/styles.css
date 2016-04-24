@@ -1,0 +1,7 @@
+.taskComplete{
+  background-color: green;
+}
+
+.taskUncomplete{
+  background-color: gray;
+}

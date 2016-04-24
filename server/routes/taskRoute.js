@@ -39,7 +39,7 @@ router.get('/', function(request, response){
       console.log(err);
       response.sendStatus(500);
     } else {
-      var query = client.query('SELECT * FROM tasks');
+      var query = client.query('SELECT task_name FROM tasks');
       var results = [];
 
       query.on('error', function(error){
