@@ -15,4 +15,9 @@ h1{
 .well{
   width: 50%;
   margin: auto;
+  text-align: center;
+}
+.btn{
+      display: -webkit-inline-box;
+      width: 100%;
 }
