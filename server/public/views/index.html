@@ -23,8 +23,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td  ng-class="{'taskComplete': task.completed, 'taskUncomplete': !task.completed}" ng-repeat="task in tasks">
+        <tr ng-class="{'taskComplete': task.completed, 'taskUncomplete': !task.completed}" ng-repeat="task in tasks">
+          <td>
             <div class="well">{{task.task_name}}<button type="button" class="btn btn-secondary" ng-click="toggleTask(task.id)">Complete</button><button type="button" class="button2 btn btn-secondary" ng-click="removeTask(task.id)">Delete</button></div>
           </td>
         </tr>
