@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html ng-app="taskApp">
-  <head>
-    <meta charset="utf-8">
-    <title>To do List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="views/styles.css"/>
-    <script src="vendor/angular/angular.min.js"></script>
-    <script src="assets/scripts/client.min.js"></script>
-  </head>
-  <body ng-controller="taskController">
-    <h1>TODO</h1>
-    <div class="input">
+<head>
+  <meta charset="utf-8">
+  <title>To do List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="views/styles.css"/>
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="assets/scripts/client.min.js"></script>
+</head>
+<body ng-controller="taskController">
+  <h1>TODO</h1>
+  <div class="input">
     <label>Enter a task</label>
     <input type="text" ng-model="task_name"/>
     <button ng-click="submitTask()">Submit Task</button>
   </div>
   <div class="container-fluid">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ToDO</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td ng-class="{'taskComplete': task.completed, 'taskUncomplete': !task.completed}" ng-repeat="task in tasks">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ToDO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td  ng-class="{'taskComplete': task.completed, 'taskUncomplete': !task.completed}" ng-repeat="task in tasks">
             <div class="well">{{task.task_name}}<button type="button" class="btn btn-secondary" ng-click="toggleTask(task.id)">Complete</button><button type="button" class="button2 btn btn-secondary" ng-click="removeTask(task.id)">Delete</button></div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-  </body>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
 </html>
