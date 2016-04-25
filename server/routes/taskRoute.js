@@ -3,9 +3,7 @@ var app = express();
 var router = express.Router();
 var pg = require('pg');
 var connection = require('../db/connection');
-
 var connectionString = connection.connectionString;
-
 router.post('/', function(request, response){
   console.log(request.body);
   pg.connect(connectionString, function(err, client, done){
@@ -15,10 +13,8 @@ router.post('/', function(request, response){
     } else {
       var task_name =  request.body.task_name;
       var results = [];
-
       var query = client.query('INSERT INTO tasks(task_name, completed)' + 'VALUES ($1, false) RETURNING task_name',
       [task_name]);
-
       query.on('error', function(error){
         console.log(error);
         response.sendStatus(500);
@@ -41,10 +37,8 @@ router.get('/', function(request, response){
     } else {
       var query = client.query('SELECT id, task_name, completed FROM tasks ORDER BY id');
       var results = [];
-
       query.on('error', function(error){
         console.log(error);
-
         response.sendStatus(500);
       });
       query.on('row', function(rowData){

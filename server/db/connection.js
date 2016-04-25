@@ -1,14 +1,11 @@
 var pg = require('pg');
-
 var connectionString;
-
 if(process.env.DATABASE_URL){
   pg.defaults.ssl = true;
   connectionString = process.env.DATABASE_URL;
 } else {
   connectionString = 'postgres://localhost:5432/task_handler';
 }
-
 function initializeDB(){
   pg.connect(connectionString, function(err, client, done){
     if(err){
