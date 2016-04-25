@@ -24,6 +24,12 @@ h1{
 .container-fluid{
 width: 100%;
 }
+table {
+    display: table;
+    border-collapse: separate;
+    -webkit-border-horizontal-spacing: 25px;
+    -webkit-border-vertical-spacing: 25px;
+  }
 td{
   padding: 15px !important;
 }
