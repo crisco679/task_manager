@@ -57,7 +57,7 @@ router.delete('/:id', function(request, response){
       console.log(err);
       response.sendStatus(500);
     } else {
-      var id = request.params['id'];
+      var id = request.params.id;
       var query = client.query('DELETE FROM tasks WHERE id=($1)', [id]);
       var results = [];
       query.on('error', function(error){

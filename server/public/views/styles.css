@@ -13,11 +13,14 @@ h1{
 }
 
 .well{
-  width: 50%;
+  width: auto;
   margin: auto;
   text-align: center;
 }
 .btn{
       display: -webkit-inline-box;
       width: 100%;
+}
+.container-fluid{
+width: 100%;
 }
