@@ -42,12 +42,10 @@ router.get('/', function(request, response){
         response.sendStatus(500);
       });
       query.on('row', function(rowData){
-        console.log('rowData', rowData);
         results.push(rowData);
       })
       query.on('end', function(){
         response.send(results);
-        console.log('results', results);
         done();
       });
     }
@@ -60,7 +58,6 @@ router.delete('/:id', function(request, response){
       response.sendStatus(500);
     } else {
       var id = request.params['id'];
-      console.log('this is the value of id', id)
       var query = client.query('DELETE FROM tasks WHERE id=($1)', [id]);
       var results = [];
       query.on('error', function(error){
@@ -83,7 +80,7 @@ router.post('/toggle:id', function(request, response){
       console.log(err);
       response.sendStatus(500);
     } else {
-      var id = request.params['id'];
+      var id = request.params.id;
       var query = client.query('UPDATE tasks SET completed = NOT completed WHERE id=($1)', [id]);
       var results = [];
       query.on('error', function(error){
