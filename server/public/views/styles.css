@@ -1,7 +1,18 @@
 .taskComplete{
-  background-color: green;
+  background-color: lightgreen;
 }
 
 .taskUncomplete{
-  background-color: gray;
+  background-color: lightgray;
+}
+h1{
+  text-align: center;
+}
+.input{
+  text-align: center;
+}
+
+.well{
+  width: 50%;
+  margin: auto;
 }

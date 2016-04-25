@@ -9,15 +9,41 @@
     <script src="assets/scripts/client.min.js"></script>
   </head>
   <body ng-controller="taskController">
-    <h1>Things to do</h1>
+    <h1>TODO</h1>
+    <div class="input">
     <label>Enter a task</label>
     <input type="text" ng-model="task_name"/>
     <button ng-click="submitTask()">Submit Task</button>
-    <div class="taskComplete taskUncomplete" ng-class="{'taskUncomplete': toggle}" ng-repeat="name in task_names">
-      <ul>
-        <li>{{name}}<button id="btn" ng-click="toggle = !toggle">Complete</button><button ng-click="removeTask(task_name)">Delete</button></li>
-      </ul>
-    </div>
-
+  </div>
+  <div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ToDO</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td ng-class="{'taskComplete': task.completed, 'taskUncomplete': !task.completed}" ng-repeat="task in tasks">
+            <div class="well">{{task.task_name}}<button id="btn" ng-click="toggleTask(task.id)">Complete</button><button ng-click="removeTask(task.id)">Delete</button></div>
+        </td>
+      </tr>
+      <!-- <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
   </body>
 </html>
